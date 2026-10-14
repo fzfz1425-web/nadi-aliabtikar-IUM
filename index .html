@@ -1,0 +1,1101 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#142d4e">
+  <meta name="description" content="نادي الابتكار في الجامعة الإسلامية بمينيسوتا، مساحة طلابية للإبداع وريادة الأعمال والتقنية والمشاريع المبتكرة.">
+  <title>نادي الابتكار | الجامعة الإسلامية بمينيسوتا</title>
+
+  <style>
+    :root {
+      --navy: #142d4e;
+      --navy-light: #203f63;
+      --teal: #258b8b;
+      --gold: #d8ad61;
+      --bg: #f5f7fa;
+      --white: #ffffff;
+      --text: #26364a;
+      --muted: #657387;
+      --border: #e2e8ef;
+      --radius: 18px;
+      --shadow: 0 8px 28px rgba(20,45,78,.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.9;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    .topbar {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      padding: 7px 12px;
+      font-size: 13px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,.97);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    .header-inner {
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .logos {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      flex-shrink: 0;
+    }
+
+    .logo-frame {
+      width: 59px;
+      height: 59px;
+      padding: 4px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: white;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .logo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      line-height: 1.6;
+    }
+
+    .brand-text strong {
+      display: block;
+      color: var(--navy);
+      font-size: 18px;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    nav a:not(.btn):hover {
+      color: var(--teal);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      border-radius: 11px;
+      padding: 11px 19px;
+      background: var(--teal);
+      color: white;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      background: #1d7171;
+      transform: translateY(-1px);
+    }
+
+    .btn-light {
+      background: white;
+      color: var(--navy);
+    }
+
+    .btn-light:hover {
+      background: #eaf1f7;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--navy);
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at 12% 20%, rgba(37,139,139,.25), transparent 30%),
+        linear-gradient(135deg, var(--navy), #1d4969);
+      color: white;
+      padding: 85px 0;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      align-items: center;
+      gap: 45px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: #d8e9ee;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 30px;
+      padding: 5px 14px;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(30px, 5vw, 49px);
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      color: #e1e9f1;
+      font-size: 17px;
+      max-width: 650px;
+      margin-bottom: 26px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-card {
+      border: 1px solid rgba(255,255,255,.2);
+      background: rgba(255,255,255,.08);
+      border-radius: 28px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .bulb {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 16px;
+      display: grid;
+      place-items: center;
+      border-radius: 30px;
+      background: rgba(216,173,97,.17);
+      font-size: 57px;
+    }
+
+    .hero-card h2 {
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .hero-card p {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 14px;
+      margin-top: 35px;
+      max-width: 560px;
+    }
+
+    .stat {
+      padding: 12px;
+      border-radius: 13px;
+      background: rgba(255,255,255,.08);
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--gold);
+      font-size: 16px;
+    }
+
+    .stat span {
+      color: #e1e9f1;
+      font-size: 12px;
+    }
+
+    section {
+      padding: 75px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 38px;
+    }
+
+    .section-heading .tag {
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .section-heading h2 {
+      color: var(--navy);
+      font-size: clamp(25px, 4vw, 34px);
+      margin: 7px 0 10px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 25px;
+      box-shadow: var(--shadow);
+      height: 100%;
+    }
+
+    .card-icon {
+      width: 53px;
+      height: 53px;
+      display: grid;
+      place-items: center;
+      background: #e8f4f3;
+      color: var(--teal);
+      border-radius: 15px;
+      font-size: 26px;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      color: var(--navy);
+      font-size: 19px;
+      margin-bottom: 9px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .about {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .about h2 {
+      color: var(--navy);
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .about p {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .check-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .check-list li {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 13px 16px;
+      border-radius: 12px;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      color: var(--teal);
+      font-weight: bold;
+      margin-left: 9px;
+    }
+
+    .teams {
+      background: #edf3f7;
+    }
+
+    .team-label {
+      display: inline-block;
+      font-size: 12px;
+      color: var(--teal);
+      background: #e5f3f1;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+
+    .opportunity-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 20px;
+    }
+
+    .event-card {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .event-type {
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .event-card .btn {
+      align-self: flex-start;
+      margin-top: 8px;
+    }
+
+    .project-placeholder {
+      min-height: 110px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg,#e4eff2,#f7efe0);
+      border-radius: 13px;
+      font-size: 38px;
+      margin-bottom: 17px;
+    }
+
+    .join {
+      background: var(--navy);
+      color: white;
+    }
+
+    .join .section-heading h2 {
+      color: white;
+    }
+
+    .join .section-heading p {
+      color: #d4e0ec;
+    }
+
+    .join-panel {
+      max-width: 780px;
+      margin: auto;
+      background: white;
+      color: var(--text);
+      padding: 30px;
+      border-radius: 22px;
+    }
+
+    .join-panel h3 {
+      color: var(--navy);
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .join-panel p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 17px;
+    }
+
+    .form-placeholder {
+      border: 1px dashed #9baaba;
+      border-radius: 14px;
+      padding: 22px;
+      text-align: center;
+      background: #f7f9fb;
+    }
+
+    .form-placeholder .btn {
+      margin-top: 8px;
+    }
+
+    .form-hint {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .contact-item .card-icon {
+      flex-shrink: 0;
+      margin: 0;
+    }
+
+    footer {
+      background: #0e223b;
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    footer p {
+      color: #d1dbe6;
+      font-size: 13px;
+    }
+
+    .footer-brand {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 15px 0;
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .header-inner {
+        flex-wrap: wrap;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-basis: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding-bottom: 10px;
+      }
+
+      nav.open {
+        display: flex;
+      }
+
+      nav a {
+        padding: 10px 4px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      nav .btn {
+        margin-top: 10px;
+      }
+
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        max-width: 430px;
+        margin: auto;
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: 91%;
+      }
+
+      .header-inner {
+        gap: 10px;
+      }
+
+      .logo-frame {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+      }
+
+      .logos {
+        gap: 5px;
+      }
+
+      .brand {
+        gap: 8px;
+      }
+
+      .brand-text strong {
+        font-size: 14px;
+      }
+
+      .brand-text span {
+        font-size: 9px;
+      }
+
+      .hero {
+        padding: 55px 0;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .hero-card {
+        padding: 22px;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .grid-3,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        gap: 8px;
+      }
+
+      .stat {
+        padding: 9px 5px;
+      }
+
+      .stat span {
+        font-size: 10px;
+      }
+
+      .card {
+        padding: 21px;
+      }
+
+      .join-panel {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    مساحة طلابية للإبداع والتعاون وصناعة الأثر
+  </div>
+
+  <header>
+    <div class="container header-inner">
+
+      <a href="#home" class="brand" aria-label="العودة إلى الرئيسية">
+        <div class="logos">
+          <!-- شعار النادي -->
+          <div class="logo-frame">
+            <img src="IMG_1948.jpeg" alt="شعار نادي الابتكار">
+          </div>
+
+          <!-- شعار الجامعة -->
+          <div class="logo-frame">
+            <img src="IMG_0364.jpeg" alt="شعار الجامعة الإسلامية بمينيسوتا">
+          </div>
+        </div>
+
+        <div class="brand-text">
+          <strong>نادي الابتكار</strong>
+          <span>الجامعة الإسلامية بمينيسوتا</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="فتح القائمة" aria-expanded="false">☰</button>
+
+      <nav id="mainNav">
+        <a href="#home">الرئيسية</a>
+        <a href="#about">عن النادي</a>
+        <a href="#teams">الفرق</a>
+        <a href="#events">الفعاليات</a>
+        <a href="#projects">المشاريع</a>
+        <a href="#contact">تواصل معنا</a>
+        <a href="#join" class="btn">انضم إلى النادي</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- الرئيسية -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div>
+          <span class="eyebrow">الإبداع يبدأ بفكرة</span>
+
+          <h1>
+            أفكار اليوم…<br>
+            <span>ابتكارات الغد</span>
+          </h1>
+
+          <p>
+            مرحبًا بك في نادي الابتكار بالجامعة الإسلامية بمينيسوتا،
+            مساحة تجمع الطلاب المهتمين بالتقنية وريادة الأعمال
+            والتصميم والبحث والابتكار؛ لنحوّل الأفكار إلى مبادرات ومشاريع
+            وفرص تعلم وتعاون.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#join" class="btn">سجّل اهتمامك</a>
+            <a href="#events" class="btn btn-light">اكتشف فرص المشاركة</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>تعلّم</strong>
+              <span>مهارات جديدة</span>
+            </div>
+            <div class="stat">
+              <strong>شارك</strong>
+              <span>في الفرص والفعاليات</span>
+            </div>
+            <div class="stat">
+              <strong>ابتكر</strong>
+              <span>مشاريع وأفكارًا</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="bulb">💡</div>
+          <h2>فكرتك تستحق أن ترى النور</h2>
+          <p>
+            تعلّم، تعاون، جرّب، وشارك فكرتك مع مجتمع طلابي
+            يؤمن بأن الابتكار يبدأ بخطوة.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- عن النادي -->
+    <section class="about" id="about">
+      <div class="container about-grid">
+
+        <div>
+          <span class="team-label">من نحن</span>
+          <h2>معًا نحو بيئة جامعية مبتكرة</h2>
+
+          <p>
+            يهدف مقترح نادي الابتكار إلى توفير مساحة للطلاب لتنمية
+            مهاراتهم، وتبادل الخبرات، والتعاون على الأفكار والمشاريع،
+            والاستفادة من الفرص والمسابقات والفعاليات المتاحة.
+          </p>
+
+          <p>
+            وبما أن الدراسة عن بُعد تجمع طلابًا من مناطق مختلفة،
+            يمكن تطوير فرق طلابية بحسب المناطق لتسهيل المشاركة
+            في الفعاليات المحلية متى توفرت الفرصة.
+          </p>
+
+          <a href="#join" class="btn">كن جزءًا من الفكرة</a>
+        </div>
+
+        <ul class="check-list">
+          <li>تنمية مهارات الابتكار وحل المشكلات.</li>
+          <li>التعريف بالمسابقات والهاكاثونات وفرص المشاركة.</li>
+          <li>تشجيع المشاريع الطلابية والعمل الجماعي.</li>
+          <li>تنظيم لقاءات وورش تدريبية عند اعتمادها.</li>
+          <li>تعزيز حضور الجامعة ومشاركة طلابها في المبادرات.</li>
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- الفرق -->
+    <section class="teams" id="teams">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="tag">مجالات العمل</span>
+          <h2>مساحات يمكنك الإبداع فيها</h2>
+          <p>
+            مجالات مقترحة يمكن للطلاب الاهتمام بها والمشاركة فيها
+            بحسب خبراتهم وميولهم.
+          </p>
+        </div>
+
+        <div class="grid-3">
+
+          <article class="card">
+            <div class="card-icon">💻</div>
+            <h3>التقنية والذكاء الاصطناعي</h3>
+            <p>
+              استكشاف التقنيات الحديثة، وتطوير الحلول الرقمية،
+              والتعلم من المشاريع والتحديات التقنية.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🚀</div>
+            <h3>ريادة الأعمال</h3>
+            <p>
+              تطوير الأفكار الريادية، وفهم احتياجات المستفيدين،
+              وبناء نماذج أولية للمشاريع.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🎨</div>
+            <h3>التصميم والإبداع</h3>
+            <p>
+              تصميم تجارب المستخدم والهوية البصرية،
+              وتقديم الأفكار بطريقة إبداعية.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🏆</div>
+            <h3>المسابقات والهاكاثونات</h3>
+            <p>
+              متابعة الفرص المناسبة، والاستعداد للمشاركة،
+              وتكوين فرق بحسب متطلبات كل فرصة.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📚</div>
+            <h3>التدريب وتبادل المعرفة</h3>
+            <p>
+              مشاركة المصادر التعليمية، وتنظيم لقاءات معرفية،
+              وتبادل الخبرات بين الطلاب.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📍</div>
+            <h3>فرق المناطق</h3>
+            <p>
+              فكرة لتنظيم الطلاب بحسب مناطقهم، لتسهيل التنسيق
+              والمشاركة في الفرص الحضورية المحلية.
+            </p>
+          </article>
+
+        </div>
+
+        <p class="opportunity-note">
+          هذه المجالات مقترحة، ويخضع اعتماد الفرق واللجان لتنظيم الجامعة.
+        </p>
+      </div>
+    </section>
+
+    <!-- الفعاليات -->
+    <section id="events">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="tag">الفرص والأنشطة</span>
+          <h2>الفعاليات والمسابقات</h2>
+          <p>
+            مساحة للإعلان عن الفرص القادمة بعد التحقق من تفاصيلها
+            واعتماد نشرها.
+          </p>
+        </div>
+
+        <div class="grid-3">
+
+          <article class="card event-card">
+            <span class="event-type">مسابقات</span>
+            <h3>المسابقات الابتكارية</h3>
+            <p>
+              سيتم نشر تفاصيل المسابقات، وشروط المشاركة،
+              والمواعيد، وروابط التسجيل عند توفرها.
+            </p>
+          </article>
+
+          <article class="card event-card">
+            <span class="event-type">هاكاثونات</span>
+            <h3>الهاكاثونات والتحديات</h3>
+            <p>
+              فرص للعمل ضمن فرق متعددة التخصصات لتطوير حلول
+              مبتكرة خلال فترة زمنية محددة.
+            </p>
+          </article>
+
+          <article class="card event-card">
+            <span class="event-type">ورش تدريبية</span>
+            <h3>التعلم وتطوير المهارات</h3>
+            <p>
+              يمكن الإعلان هنا عن الورش واللقاءات التعليمية
+              بعد تحديد الجهة المنظمة وموعد النشاط.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- المشاريع -->
+    <section class="about" id="projects">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="tag">أفكار تتحول إلى إنجازات</span>
+          <h2>المشاريع والمبادرات الطلابية</h2>
+          <p>
+            سنعرض هنا المشاريع التي يشارك بها الطلاب بعد الحصول
+            على موافقتهم واعتماد المعلومات المنشورة.
+          </p>
+        </div>
+
+        <div class="grid-3">
+
+          <article class="card">
+            <div class="project-placeholder">💡</div>
+            <h3>أفكار مبتكرة</h3>
+            <p>
+              مساحة للتعريف بالأفكار الطلابية الواعدة
+              والتحديات التي تسعى إلى حلها.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="project-placeholder">🧩</div>
+            <h3>نماذج أولية</h3>
+            <p>
+              عرض النماذج والتجارب التي يطورها الطلاب
+              لاختبار حلولهم وتحسينها.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="project-placeholder">🌟</div>
+            <h3>إنجازات ومشاركات</h3>
+            <p>
+              توثيق المشاركات والنتائج والإنجازات الطلابية
+              بعد التحقق من تفاصيلها.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- التسجيل -->
+    <section class="join" id="join">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="tag">ابدأ رحلتك</span>
+          <h2>هل ترغب في الانضمام إلى مجتمع الابتكار؟</h2>
+          <p>
+            سجّل اهتمامك لتتمكن الجهة المنظمة من التعرف على
+            اهتمامات الطلاب ومجالات رغبتهم في المشاركة.
+          </p>
+        </div>
+
+        <div class="join-panel">
+          <h3>نموذج تسجيل الاهتمام</h3>
+          <p>
+            سيُستخدم نموذج خارجي لاستقبال الردود وتنظيمها.
+            بعد إنشاء نموذج Google Forms، سنربطه بهذا القسم.
+          </p>
+
+          <div class="form-placeholder">
+            <div class="card-icon" style="margin:0 auto 12px;">📝</div>
+            <h3>التسجيل قريبًا</h3>
+            <p>
+              لم يتم ربط نموذج التسجيل بعد. لن تُرسل البيانات
+              أو تُحفظ من خلال هذه الصفحة في الوقت الحالي.
+            </p>
+
+            <!--
+              بعد إنشاء Google Form:
+              يمكن تضمينه هنا باستبدال هذا القسم بعنصر iframe.
+              استخدمي رابط التضمين الذي يوفره Google Forms.
+            -->
+
+            <a class="btn"
+               href="https://docs.google.com/forms/"
+               target="_blank"
+               rel="noopener noreferrer">
+              فتح Google Forms
+            </a>
+
+            <span class="form-hint">
+              هذا الرابط لإنشاء النموذج، وليس نموذج تسجيل النادي نفسه.
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- التواصل -->
+    <section id="contact">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="tag">تواصل معنا</span>
+          <h2>للتواصل والاستفسارات</h2>
+          <p>
+            نرحب باستفساراتكم ومقترحاتكم المتعلقة بمبادرة النادي.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+
+          <article class="card contact-item">
+            <div class="card-icon">🎓</div>
+            <div>
+              <h3>الجهة الجامعية</h3>
+              <p>الجامعة الإسلامية بمينيسوتا</p>
+              <p>
+                تُضاف هنا بيانات التواصل الرسمية بعد اعتمادها.
+              </p>
+            </div>
+          </article>
+
+          <article class="card contact-item">
+            <div class="card-icon">✉️</div>
+            <div>
+              <h3>البريد الإلكتروني</h3>
+              <p>
+                سيُضاف البريد الرسمي المخصص للنادي عند توفره.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-brand">نادي الابتكار</div>
+      <p>الجامعة الإسلامية بمينيسوتا</p>
+
+      <div class="footer-links">
+        <a href="#home">الرئيسية</a>
+        <a href="#about">عن النادي</a>
+        <a href="#events">الفعاليات</a>
+        <a href="#projects">المشاريع</a>
+        <a href="#join">التسجيل</a>
+      </div>
+
+      <p>
+        © <span id="year"></span> نادي الابتكار.
+        جميع الحقوق محفوظة.
+      </p>
+      <p>موقع تعريفي تجريبي لمبادرة النادي.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = mainNav.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    document.querySelectorAll("#mainNav a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        mainNav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
+
